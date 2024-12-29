@@ -1,114 +1,98 @@
-import { DiscordIcon } from "@/components/icons/discord";
-import { GithubIcon } from "@/components/icons/github";
-import { LinkedInIcon } from "@/components/icons/linkedin";
-import { TwitchIcon } from "@/components/icons/twitch";
-import { XIcon } from "@/components/icons/x";
-import { YouTubeIcon } from "@/components/icons/youtube";
-import type React from "react";
+import { GithubIcon } from '@/components/icons/github';
+import { LinkedInIcon } from '@/components/icons/linkedin';
+import { BlueskyIcon } from '@/components/icons/bluesky';
+import type React from 'react';
 
 export type Image = {
-	src: string;
-	alt?: string;
-	caption?: string;
+  src: string;
+  alt?: string;
+  caption?: string;
 };
 
 export type Social = {
-	platform: string;
-	link: string;
-	icon: React.ReactNode;
+  platform: string;
+  link: string;
+  icon: React.ReactNode;
 };
 
 export type Category = {
-	title: string;
-	page: string | undefined;
-	href: string;
+  title: string;
+  page: string | undefined;
+  href: string;
 };
 
 export type Meta = {
-	title: string;
-	description: string;
-	image: Image;
+  title: string;
+  description: string;
+  image: Image;
 };
 
 export type SiteConfig = {
-	meta: Meta;
-	name: string;
-	headshot: string;
-	title: string;
-	description: string;
-	socials: Array<Social>;
-	categories: Array<Category>;
+  meta: Meta;
+  name: string;
+  headshot: string;
+  title: string;
+  description: string;
+  socials: Array<Social>;
+  categories: Array<Category>;
 };
 
 export const CONFIG: SiteConfig = {
-	meta: {
-		title: "Gaia Rossi",
-		description: "This is my portfolio.",
-		image: {
-			src: "/headshot.jpg",
-			alt: "Gaia Rossi",
-		},
-	},
-	name: "Gaia Rossi",
-	headshot: "/headshot.jpg",
-	title: "Software Developer",
-	description: `I'm Gaia Rossi, an Italian front-end developer with over a decade of experience in crafting beautiful, user-friendly websites. 
-  I specialize in HTML, CSS, JavaScript, and modern frameworks like React and Vue.js. 
-  Beyond coding, I have a passion for traveling and discovering new cultures, which often inspires my work. 
-  I also love to cook and experiment with new dishes from around the world. 
-  This blend of technical skills and diverse experiences allows me to bring a unique and creative perspective to every project I undertake.`,
-	socials: [
-		{
-			platform: "GitHub",
-			link: "https://github.com/",
-			icon: <GithubIcon />,
-		},
-		{
-			platform: "LinkedIn",
-			link: "https://www.linkedin.com/",
-			icon: <LinkedInIcon />,
-		},
-		{
-			platform: "Discord",
-			link: "https://discord.com/",
-			icon: <DiscordIcon />,
-		},
-		{
-			platform: "X",
-			link: "https://x.com/",
-			icon: <XIcon />,
-		},
-		{
-			platform: "YouTube",
-			link: "https://www.youtube.com/",
-			icon: <YouTubeIcon />,
-		},
-		{
-			platform: "Twitch",
-			link: "https://www.twitch.tv/",
-			icon: <TwitchIcon />,
-		},
-	],
-	categories: [
-		{
-			title: "All",
-			page: undefined,
-			href: "/posts",
-		},
-		{
-			title: "Technical",
-			page: "tech",
-			href: "/posts/tech",
-		},
-		{
-			title: "Food",
-			page: "food",
-			href: "/posts/food",
-		},
-		{
-			title: "Travel",
-			page: "travel",
-			href: "/posts/travel",
-		},
-	],
+  meta: {
+    title: 'Gaia Rossi',
+    description: 'This is my portfolio.',
+    image: {
+      src: '/headshot.jpg',
+      alt: 'Gaia Rossi',
+    },
+  },
+  name: 'Michael Shilman',
+  headshot: '/headshot.jpg',
+  title: 'Product Manager',
+  description: `
+		I’m Michael Shilman, entrepreneur, product manager, and open source engineer.
+
+		My current pursuit is [Storybook](https://storybook.js.org), which I’ve led since 2017. During that time, it’s grown to become the standard workshop for UI component development. Today, Storybook is used by design system and product development teams across the industry, in every business sector, including teams at over half of the companies in the Fortune 100.
+
+		Earlier in my career, I led development of innovative tools for parametric insurance, investment portfolio management, online shopping research, and digital ink note taking. This site collects my projects, articles, papers, talks, and awards.
+	`.trim(),
+  socials: [
+    {
+      platform: 'Bluesky',
+      link: 'https://bsky.app/profile/shilman.net',
+      icon: <BlueskyIcon />,
+    },
+    {
+      platform: 'GitHub',
+      link: 'https://github.com/shilman',
+      icon: <GithubIcon />,
+    },
+    {
+      platform: 'LinkedIn',
+      link: 'https://www.linkedin.com/in/shilman',
+      icon: <LinkedInIcon />,
+    },
+  ],
+  categories: [
+    {
+      title: 'All',
+      page: undefined,
+      href: '/posts',
+    },
+    {
+      title: 'Technical',
+      page: 'tech',
+      href: '/posts/tech',
+    },
+    {
+      title: 'Food',
+      page: 'food',
+      href: '/posts/food',
+    },
+    {
+      title: 'Travel',
+      page: 'travel',
+      href: '/posts/travel',
+    },
+  ],
 };
